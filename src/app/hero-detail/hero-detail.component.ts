@@ -8,7 +8,8 @@ import { Hero } from '../templates/Hero';
 })
 export class HeroDetailComponent implements OnInit {
 
-  @Input() hero: Hero
+  @Input()
+  hero!: Hero;
 
   constructor() {
    }
