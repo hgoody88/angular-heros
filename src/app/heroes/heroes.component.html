@@ -1,9 +1,27 @@
 <h2>Heroes</h2>
 
+<app-search></app-search>
+
 <ul class="heroes">
   <li *ngFor="let hero of heroes">
     <a routerLink="/detail/{{hero.id}}">
       <span>Hero: {{hero.name}}</span>
     </a>
+    <button
+      class="delete"
+      title="delete hero"
+      (click)="delete(hero)"
+    >x</button>
   </li>
 </ul>
+
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+  <button
+    class="add-button"
+    (click)="add(heroName.value); heroName.value=''"
+  >
+    Add Hero
+  </button>
+</div>
